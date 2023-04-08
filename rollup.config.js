@@ -1,12 +1,12 @@
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
 // import terser from '@rollup/plugin-terser';
 import external from 'rollup-plugin-peer-deps-external';
 import linaria from '@linaria/rollup';
 // import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
+import resolve from '@rollup/plugin-node-resolve';
 import styles from 'rollup-plugin-styles';
+import typescript from '@rollup/plugin-typescript';
 
 const packageJson = require('./package.json');
 
@@ -24,16 +24,6 @@ export default {
       },
     },
     {
-      file: packageJson.browsers,
-      format: 'iife',
-      sourcemap: true,
-      name: 'CloudCoreUI',
-      globals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-      },
-    },
-    {
       file: packageJson.module,
       format: 'esm',
       sourcemap: true,
@@ -43,7 +33,7 @@ export default {
       },
     },
     {
-      file: packageJson.umd,
+      file: `dist/umd/ui@${packageJson.version}/index.js`,
       format: 'umd',
       sourcemap: true,
       name: 'CloudCoreUI',

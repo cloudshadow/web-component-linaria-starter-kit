@@ -4,15 +4,13 @@
   "name": "web-component-sass-starter-kit",
   "author": "cloudshadow",
   "main": "dist/index.cjs.js",
-  "browsers": "dist/index.iife.js",
   "module": "dist/index.esm.js",
-  "umd": "dist/index.umd.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=18"
   },
   "scripts": {
     "clean": "rimraf dist",
